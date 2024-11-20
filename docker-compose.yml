@@ -8,16 +8,13 @@ services:
     image: redis:alpine
 
   catalog.api:
-    image: ${DOCKER_REGISTRY-}catalogapi
+    image: catalogapi
     build:
       context: .
       dockerfile: Catalog.Api/Dockerfile
 
   basket.api:
-    image: ${DOCKER_REGISTRY-}basketapi
+    image: basketapi
     build:
       context: .
       dockerfile: Basket.Api/Dockerfile
-
-volumes:
-  mongo_data:

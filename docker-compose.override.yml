@@ -23,7 +23,7 @@ services:
     depends_on: 
       - catalogdb
     ports:
-      - "8000:80"
+      - "8000:8080"
 
   basket.api:
     container_name: basket.api
@@ -33,5 +33,7 @@ services:
     depends_on: 
       - basketdb
     ports:
-      - "8001:80"
+      - "8001:8080"
 
+volumes:
+  mongo_data:
