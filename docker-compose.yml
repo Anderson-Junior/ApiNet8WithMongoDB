@@ -7,6 +7,12 @@ services:
   basketdb:
     image: redis:alpine
 
+  discountdb:
+    image: postgres
+
+  pgadmin:
+    image: dpage/pgadmin4
+
   catalog.api:
     image: catalogapi
     build:
@@ -18,3 +24,10 @@ services:
     build:
       context: .
       dockerfile: Basket.Api/Dockerfile
+
+  discount.api:
+    image: discountapi
+    build:
+      context: .
+      dockerfile: Discount.Api/Dockerfile
+
